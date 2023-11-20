@@ -1,6 +1,6 @@
 <?php require_once './connect/server.php'; ?>
-<?php if ($_SESSION['succeed']) { ?>
-    <div class="succeed">
+<?php if (!empty($_SESSION['succeed'])) { ?>
+    <div class="alert alert-success text-center" role="alert">
         <p>
             <?php echo $_SESSION['succeed'];
             unset($_SESSION['succeed']); ?>

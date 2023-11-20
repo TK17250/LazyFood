@@ -7,6 +7,8 @@
 
     class DB_conn {
 
+        public $conn;
+
         function __construct() {
             $conn = mysqli_connect(DB_host, DB_user, DB_pass, DB_name);
             
