@@ -7,10 +7,11 @@
 
     class DB_conn {
 
-        public $conn;
+        public $dbconn;
 
         function __construct() {
             $conn = mysqli_connect(DB_host, DB_user, DB_pass, DB_name);
+            $this->dbconn = $conn;
             
             if (!$conn) {
                 echo "Connected Failed" . mysqli_connect_error();
@@ -18,5 +19,3 @@
         }
 
     }
-
-    $conn = new DB_conn();

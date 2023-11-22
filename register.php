@@ -1,4 +1,10 @@
-<?php require_once './connect/server.php'; ?>
+<?php require_once './connect/server.php'; 
+
+    if (!empty($_SESSION['name'])) {
+        header("location: index.php");
+    }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,13 +13,13 @@
     <title>LazyFood</title>
     <link rel="shortcut icon" href="./data/icon.png" type="image/x-icon">
     <link rel="stylesheet" href="./framework/css/bootstrap.min.css">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./framework/tailwind.css"></script>
     <link rel="stylesheet" href="./dist/css/main.css">
     <link rel="stylesheet" href="./dist/css/reg.css">
 </head>
 <body>
 
-    <div class="box w-5/6 md:w-1/2 lg:w-1/4">
+    <div class="box flex flex-col justify-center lg:w-1/4">
         <h3 class="top-text text-2xl">สมัครสมาชิก</h3>
 
         <div class="p-3">
@@ -26,7 +32,7 @@
             <!-- Error -->
             <?php include_once './component/error.php' ?>
 
-            <form action="" method="post" class="was-validated">
+            <form action="./process/register_db.php" method="post" class="was-validated">
 
                 <!-- Fullname -->
                 <div class="mb-3">
@@ -81,7 +87,7 @@
 
                 <!-- Submit -->
                 <div class="">
-                    <button type="submit" class="btn-color m-auto d-block">Submit form</button>
+                    <button type="submit" class="btn-color m-auto d-block" name="reg">สมัครสมาชิก</button>
                 </div>
 
             </form>
