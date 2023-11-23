@@ -10,6 +10,7 @@ body, html {
 }
 
 /*                     icon                     */
+
 .icon {
     width: 30px;
     height: 30px;
@@ -21,6 +22,7 @@ body, html {
 }
 
 /*                     Navbar                       */
+
 .navbar-brand {
     transition: all 0.1s;
 }

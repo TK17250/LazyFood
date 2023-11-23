@@ -54,7 +54,7 @@
 
                     <!-- Login -->
                     <li class="nav-item me-2">
-                        <a class="nav-link" aria-current="page" href="index.php">เข้าสู่ระบบ</a>
+                        <a class="nav-link" aria-current="page" href="login.php">เข้าสู่ระบบ</a>
                     </li>
                     
                     <!-- Register -->

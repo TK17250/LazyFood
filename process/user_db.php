@@ -26,4 +26,11 @@
             return $result;
         }
 
+        // Login
+        public function loginfunc($username) {
+            $sql = "SELECT * FROM User WHERE u_username = '$username'";
+            $result = mysqli_query($this->dbconn, $sql);
+            return $result;
+        }
+
     }

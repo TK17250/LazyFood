@@ -20,7 +20,7 @@
 <body>
 
     <div class="box flex flex-col justify-center w-11/12 md:w-1/2 xl:w-1/4">
-        <h3 class="top-text text-2xl">สมัครสมาชิก</h3>
+        <h3 class="top-text text-2xl">เข้าสู่ระบบ</h3>
 
         <div class="p-3">
 
@@ -32,16 +32,7 @@
             <!-- Error -->
             <?php include_once './component/error.php' ?>
 
-            <form action="./process/register_db.php" method="post" class="was-validated">
-
-                <!-- Fullname -->
-                <div class="mb-3">
-                    <label for="fullname" class="form-label">ชื่อ - นามสกุล</label>
-                    <input type="text" class="form-control" name="fname" id="fullname" autocomplete="off" required>
-                    <div class="invalid-feedback">
-                        กรอกชื่อ - นามสกุลของคุณ
-                    </div>
-                </div>
+            <form action="./process/login_db.php" method="post" class="was-validated">
 
                 <!-- Username -->
                 <div class="mb-3">
@@ -49,15 +40,6 @@
                     <input type="text" class="form-control" name="username" id="username" autocomplete="off" required>
                     <div class="invalid-feedback">
                         กรอกชื่อผู้ใช้ของคุณ
-                    </div>
-                </div>
-
-                <!-- Email -->
-                <div class="mb-3">
-                    <label for="email" class="form-label">อีเมล</label>
-                    <input type="email" class="form-control" name="email" id="email" autocomplete="off" required>
-                    <div class="invalid-feedback">
-                        กรอกอีเมลของคุณ
                     </div>
                 </div>
 
@@ -70,15 +52,6 @@
                     </div>
                 </div>
 
-                <!-- Confirm Password -->
-                <div class="mb-3">
-                    <label for="confirmpassword" class="form-label">ยืนยันรหัสผ่าน</label>
-                    <input type="password" class="form-control password" name="confirmpassword" id="confirmpassword" autocomplete="off" required>
-                    <div class="invalid-feedback">
-                        กรอกยืนยันรหัสผ่านของคุณ
-                    </div>
-                </div>
-
                 <!-- Show Password -->
                 <div class="mb-3">
                     <input type="checkbox" onclick="showpassword()" class="me-2" id="showpass">
@@ -87,9 +60,9 @@
 
                 <!-- Submit -->
                 <div class="">
-                    <button type="submit" class="btn-color m-auto d-block" name="reg">สมัครสมาชิก</button>
+                    <button type="submit" class="btn-color m-auto d-block" name="log">สมัครสมาชิก</button>
                     <div class="mt-2">
-                        <a href="./login.php">มีบัญชีอยู่แล้ว</a>
+                        <a href="./register.php" class="mt-2">ยังไม่มีบัญชี</a>
                     </div>
                 </div>
 
