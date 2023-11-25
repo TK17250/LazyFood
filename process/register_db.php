@@ -1,5 +1,5 @@
 <?php require_once '../connect/server.php';
-    require_once './user_db.php';
+    require_once '../class/user_db.php';
 
     $dbconn = new DB_conn();
     $userconn = new User_DB();

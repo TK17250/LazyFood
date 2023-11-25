@@ -1,5 +1,5 @@
 <?php require_once '../connect/server.php';
-    require_once './user_db.php';
+    require_once '../class/user_db.php';
 
     $dbname = new User_DB();
 
@@ -16,11 +16,16 @@
 
             // Check Password
             if (password_verify($password, $password_hash)) {
-
                 $_SESSION['succeed'] = "เข้าสู่ระบบสำเร็จ";
                 $_SESSION['name'] = $username;
                 $_SESSION['rank'] = $rowuser['u_rank'];
-                header("location: ../index.php");
+
+                if ($rowuser['u_rank'] == "สมาชิก") {
+                    header("location: ../index.php");
+                } else {
+                    header("location: ../admin/adminpage.php");
+                }
+
             } else {
                 $_SESSION['error'] = "รหัสผ่านไม่ถูกต้อง";
                 header("location: ../login.php");
