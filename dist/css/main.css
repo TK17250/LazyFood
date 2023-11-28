@@ -9,6 +9,18 @@ body, html {
     font-family: IBM;
 }
 
+o {
+    color: red;
+}
+
+.color {
+    color: #eb8219;
+}
+
+.color:hover {
+    color: #c06305;
+}
+
 /*                     icon                     */
 
 .icon {

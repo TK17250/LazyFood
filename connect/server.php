@@ -19,3 +19,5 @@
         }
 
     }
+
+    $connDB = new DB_conn();
