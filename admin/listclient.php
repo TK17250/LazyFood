@@ -25,7 +25,7 @@ require_once '../class/user_db.php';
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <link rel="stylesheet" href="../dist/css/main.css">
 </head>
-<body>
+<body class="wrapper">
 
     <!-- Header -->
     <?php include_once './component/navbar.php'; ?>
@@ -34,32 +34,82 @@ require_once '../class/user_db.php';
     <?php include_once './component/sidebar.php'; ?>
 
     <!-- Content -->
-    <div class="content-wrapper p-3">
-        <p class="fs-3">รายการผู้ใช้</p>
+    <div class="content-wrapper">
+        
+        <!-- Content Header -->
+        <div class="content-header">
+            <div class="container-fluid">
+                <!-- Alert -->
+                <div>
+                    <!-- Error -->
+                    <?php include_once './component/error.php' ?>
+                    <!-- Succeed -->
+                    <?php include_once './component/succeed.php' ?>
+                </div>
+                <!-- Title -->
+                <div >
+                    <h3 class="">รายการผู้ใช้</h3>
+                </div>
+                <!-- link -->
+                <div>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="./adminpage.php">Home</a></li>
+                            <li class="breadcrumb-item"><a href="./listclient.php">รายการผู้ใช้</a></li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
 
-        <!-- Table -->
-        <table class="table table-hover table-bordered">
-            <thead>
-                <tr>
-                    <th scope="col">ชื่อ - นามสกุล</th>
-                    <th scope="col">ชื่อผู้ใช้</th>
-                    <th scope="col">อีเมล</th>
-                    <th scope="col">แก้ไข</th>
-                    <th scope="col">ลบ</th>
-                </tr>
-            </thead>
-            <tbody class="table-group-divider">
-                <?php while ($row = mysqli_fetch_assoc($readuser)) { ?>
-                    <tr>
-                        <td><?php echo $row['u_fname'] ?></td>
-                        <td><?php echo $row['u_username'] ?></td>
-                        <td><?php echo $row['u_email'] ?></td>
-                        <td class="text-center"><i class="bi bi-pencil-square"></i></td>
-                        <td class="text-center"><i class="bi bi-trash-fill"></i></td>
-                    </tr>
-                <?php } ?>
-            </tbody>
-        </table>
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+
+                    <!-- Table -->
+                    <div class="col-12 w-100">
+                        <div class="table-responsive">
+                            <table class="table table-hover table-bordered">
+
+                                <!-- Head Table -->
+                                <thead>
+                                    <tr>
+                                        <th scope="col">ชื่อ - นามสกุล</th>
+                                        <th scope="col">ชื่อผู้ใช้</th>
+                                        <th scope="col">อีเมล</th>
+                                        <th scope="col" class="text-center">จัดการ</th>
+                                    </tr>
+                                </thead>
+
+                                <!-- Body Table -->
+                                <tbody class="table-group-divider">
+                                    <form action="../process/deluser.php" method="post">
+                                        <?php while ($row = mysqli_fetch_assoc($readuser)) { ?>
+                                            <tr>
+                                                <td><?php echo $row['u_fname'] ?></td>
+                                                <td><?php echo $row['u_username'] ?></td>
+                                                <td><?php echo $row['u_email'] ?></td>
+                                                <td>
+                                                    <div class="d-flex text-center">
+                                                        <!-- Edit -->
+                                                        <a href="./editclient.php?userid=<?php echo $row['u_id']; ?>" class="bi bi-pencil-square m-auto p-2 btn-warning rounded" role="button"> แก้ไข</a>
+
+                                                        <!-- Delete -->
+                                                        <button type="submit" name="deluser" class="bi bi-trash-fill m-auto btn btn-danger p-2 rounded" value="<?php echo $row['u_id'] ?>"> ลบ</button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        <?php } ?>
+                                    </form>
+                                </tbody>
+
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
 
         <!-- Pagination -->
         <div class="d-flex justify-content-center">
@@ -87,8 +137,10 @@ require_once '../class/user_db.php';
             </nav>
         </div>
 
-
     </div>
+
+    <!-- Footer -->
+    <?php include_once './component/footer.php'; ?>
 
 </body>
 <script src="../framework/js/jquery.min.js"></script>

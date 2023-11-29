@@ -58,6 +58,24 @@
                 'result' => $result,
                 'totalPages' => $totalPages
             ];
-        }                
+        }  
+        
+        // Read User ID 
+        public function readuserid($userid) {
+            $sql = "SELECT * FROM User WHERE u_id = '$userid'";
+            $result = mysqli_query($this->dbconn, $sql);
+            return $result;
+        }
+
+        // Edit User
+        public function edituser($fname, $username, $email, $rank, $userid) {
+            $sql = "UPDATE User SET 
+            u_fname = '$fname',
+            u_username = '$username',
+            u_email = '$email',
+            u_rank = '$rank' WHERE u_id = '$userid'";
+            $result = mysqli_query($this->dbconn, $sql);
+            return $result;
+        }
 
     }
