@@ -131,7 +131,7 @@ require_once '../class/user_db.php';
 
 </body>
 <script src="../dist/js/alertAD.js"></script>
-<script src="../framework/js/sweetalert2.js"></script>
+<script src="../framework/sweetalert2.all.min.js"></script>
 <script src="../framework/js/jquery.min.js"></script>
 <script src="../framework/js/adminlte.min.js"></script>
 <script src="../framework/js/bootstrap.bundle.min.js"></script>
