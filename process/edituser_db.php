@@ -1,3 +1,6 @@
+<link rel="stylesheet" href="../dist/css/main.css">
+<script src="../framework/sweetalert2.all.min.js"></script>
+<script src="../framework/js/jquery.min.js"></script>
 <?php require_once '../connect/server.php';
     require_once '../class/user_db.php';
 
@@ -31,7 +34,18 @@
                     } else {
                         $_SESSION['succeed'] = "เปลี่ยนแปลงผู้ใช้ {$username} สำเร็จ";
                         $edituser = $userdb->edituser($fname, $username, $email, $rank, $userid);
-                        header("location: ../admin/listclient.php");
+                        echo "<script>
+                            $(document).ready(function() {
+                                Swal.fire(
+                                    'แก้ไขแล้ว!',
+                                    'ข้อมูลของคุณถูกแก้ไขแล้ว.',
+                                    'success'
+                                ).then(function() {
+                                    location.href = '../admin/listclient.php';
+                                })
+                            });
+                        </script>";
+                        header("refresh:2; ../admin/listclient.php");
                     }
                 }
             } else {
@@ -41,7 +55,18 @@
                 } else {
                     $_SESSION['succeed'] = "เปลี่ยนแปลงผู้ใช้ {$username} สำเร็จ";
                     $edituser = $userdb->edituser($fname, $username, $email, $rank, $userid);
-                    header("location: ../admin/listclient.php");
+                    echo "<script>
+                        $(document).ready(function() {
+                            Swal.fire(
+                                'แก้ไขแล้ว!',
+                                'ข้อมูลของคุณถูกแก้ไขแล้ว.',
+                                'success'
+                            ).then(function() {
+                                location.href = '../admin/listclient.php';
+                            })
+                        });
+                    </script>";
+                    header("refresh:2; ../admin/listclient.php");
                 }
             }
 
@@ -54,11 +79,33 @@
             } else {
                 $_SESSION['succeed'] = "เปลี่ยนแปลงผู้ใช้ {$username} สำเร็จ";
                 $edituser = $userdb->edituser($fname, $username, $email, $rank, $userid);
-                header("location: ../admin/listclient.php");
+                echo "<script>
+                    $(document).ready(function() {
+                        Swal.fire(
+                            'แก้ไขแล้ว!',
+                            'ข้อมูลของคุณถูกแก้ไขแล้ว.',
+                            'success'
+                        ).then(function() {
+                            location.href = '../admin/listclient.php';
+                        })
+                    });
+                </script>";
+                header("refresh:2; ../admin/listclient.php");
             }
         } else {
             $_SESSION['succeed'] = "เปลี่ยนแปลงผู้ใช้ {$username} สำเร็จ";
             $edituser = $userdb->edituser($fname, $username, $email, $rank, $userid);
-            header("location: ../admin/listclient.php");
+            echo "<script>
+                $(document).ready(function() {
+                    Swal.fire(
+                        'แก้ไขแล้ว!',
+                        'ข้อมูลของคุณถูกแก้ไขแล้ว.',
+                        'success'
+                    ).then(function() {
+                        location.href = '../admin/listclient.php';
+                    })
+                });
+            </script>";
+            header("refresh:2; ../admin/listclient.php");
         }
     }
