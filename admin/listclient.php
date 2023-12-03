@@ -83,24 +83,22 @@ require_once '../class/user_db.php';
 
                                 <!-- Body Table -->
                                 <tbody class="table-group-divider">
-                                    <form action="../process/deluser.php" method="post">
-                                        <?php while ($row = mysqli_fetch_assoc($readuser)) { ?>
-                                            <tr>
-                                                <td><?php echo $row['u_fname'] ?></td>
-                                                <td><?php echo $row['u_username'] ?></td>
-                                                <td><?php echo $row['u_email'] ?></td>
-                                                <td>
-                                                    <div class="d-flex text-center">
-                                                        <!-- Edit -->
-                                                        <a href="./editclient.php?userid=<?php echo $row['u_id']; ?>" class="bi bi-pencil-square m-auto p-2 btn-warning rounded" role="button"> แก้ไข</a>
+                                    <?php while ($row = mysqli_fetch_assoc($readuser)) { ?>
+                                        <tr>
+                                            <td><?php echo $row['u_fname'] ?></td>
+                                            <td><?php echo $row['u_username'] ?></td>
+                                            <td><?php echo $row['u_email'] ?></td>
+                                            <td>
+                                                <div class="d-flex text-center">
+                                                    <!-- Edit -->
+                                                    <a href="./editclient.php?userid=<?php echo $row['u_id']; ?>" class="bi bi-pencil-square m-auto p-2 btn-warning rounded" role="button"> แก้ไข</a>
 
-                                                        <!-- Delete -->
-                                                        <button type="submit" name="deluser" class="bi bi-trash-fill m-auto btn btn-danger p-2 rounded" value="<?php echo $row['u_id'] ?>"> ลบ</button>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        <?php } ?>
-                                    </form>
+                                                    <!-- Delete -->
+                                                    <button type="submit" name="deluser" class="bi bi-trash-fill m-auto btn btn-danger p-2 rounded" value="<?php echo $row['u_id'] ?>" onclick="return confirmdelete()"> ลบ</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    <?php } ?>
                                 </tbody>
 
                             </table>
@@ -143,6 +141,8 @@ require_once '../class/user_db.php';
     <?php include_once './component/footer.php'; ?>
 
 </body>
+<script src="../dist/js/alertAD.js"></script>
+<script src="../framework/sweetalert2.all.min.js"></script>
 <script src="../framework/js/jquery.min.js"></script>
 <script src="../framework/js/adminlte.min.js"></script>
 <script src="../framework/js/bootstrap.bundle.min.js"></script>

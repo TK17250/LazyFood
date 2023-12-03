@@ -78,4 +78,11 @@
             return $result;
         }
 
+        // Delete User
+        public function deleteuser($userid) {
+            $sql = "DELETE FROM User WHERE u_id = '$userid'";
+            $result = mysqli_query($this->dbconn, $sql);
+            return $result;
+        }
+
     }
