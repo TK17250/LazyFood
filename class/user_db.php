@@ -35,6 +35,8 @@
 
         // Read User Rank
         public function readuserrank($rank, $page = 1, $recordsPerPage = 10) {
+            $username = $_SESSION['name'];
+        
             // นับบันทึกทั้งหมด
             $totalRecordsQuery = "SELECT COUNT(*) as total FROM User WHERE u_rank = '$rank'";
             $totalRecordsResult = mysqli_query($this->dbconn, $totalRecordsQuery);
@@ -51,14 +53,14 @@
             $start = ($page - 1) * $recordsPerPage;
         
             // ดึงข้อมูลบันทึกสำหรับหน้าปัจจุบัน
-            $sql = "SELECT * FROM User WHERE u_rank = '$rank' LIMIT $start, $recordsPerPage";
+            $sql = "SELECT * FROM User WHERE u_rank = '$rank' AND u_username != '$username' LIMIT $start, $recordsPerPage";
             $result = mysqli_query($this->dbconn, $sql);
         
             return [
                 'result' => $result,
                 'totalPages' => $totalPages
             ];
-        }  
+        }
         
         // Read User ID 
         public function readuserid($userid) {

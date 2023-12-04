@@ -11,7 +11,7 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="info">
-                <a class="d-block">ยินดีต้อนรับคุณ <b class="fs-5" style="color:  #ff6e6e;"><?php echo $_SESSION['name'] ?></b></a>
+                <a class="d-block">ยินดีต้อนรับคุณ <b class="fs-5" style="color:  #fd7e14;"><?php echo $_SESSION['name'] ?></b></a>
             </div>
         </div>
 
@@ -35,16 +35,27 @@
 
                     <!-- Menu -->
                     <ul class="nav nav-treeview">
+                        <!-- List Personnel -->
                         <li class="nav-item">
                             <a href="./listpersonnel.php" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>รายการพนักงาน</p>
                             </a>
                         </li>
+
+                        <!-- List Client -->
                         <li class="nav-item">
                             <a href="./listclient.php" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>รายการผู้ใช้</p>
+                            </a>
+                        </li>
+
+                        <!-- Add User -->
+                        <li class="nav-item">
+                            <a href="./adduser.php" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>เพิ่มสมาชิก</p>
                             </a>
                         </li>
                     </ul>
