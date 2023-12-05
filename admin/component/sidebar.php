@@ -47,15 +47,15 @@
                         <li class="nav-item">
                             <a href="./listclient.php" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>รายการผู้ใช้</p>
+                                <p>รายการสมาชิก</p>
                             </a>
                         </li>
 
                         <!-- Add User -->
                         <li class="nav-item">
                             <a href="./adduser.php" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>เพิ่มสมาชิก</p>
+                                <i class="far bi-plus-circle-fill nav-icon"></i>
+                                <p>เพิ่มผู้ใช้</p>
                             </a>
                         </li>
                     </ul>

@@ -48,14 +48,14 @@ require_once '../class/user_db.php';
                 </div>
                 <!-- Title -->
                 <div >
-                    <h3 class="">รายการผู้ใช้</h3>
+                    <h3 class="">รายการสมาชิก</h3>
                 </div>
                 <!-- link -->
                 <div>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="./adminpage.php">Home</a></li>
-                            <li class="breadcrumb-item"><a href="./listclient.php">รายการผู้ใช้</a></li>
+                            <li class="breadcrumb-item"><a href="./listclient.php">รายการสมาชิก</a></li>
                         </ol>
                     </nav>
                 </div>
