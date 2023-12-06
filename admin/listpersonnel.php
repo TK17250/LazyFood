@@ -127,7 +127,7 @@ require_once '../class/user_db.php';
                     }
 
                     // Next Page
-                    echo "<li class='page-item " . ($page == $totalPages ? 'disabled' : '') . "'>";
+                    echo "<li class='page-item " . ($page >= $totalPages ? 'disabled' : '') . "'>";
                     echo "<a class='page-link' href='?page=" . ($page + 1) . "' aria-label='Next'>";
                     echo "<span aria-hidden='true'>&raquo;</span></a></li>";
                     ?>
