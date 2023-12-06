@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Dec 04, 2023 at 07:38 PM
+-- Generation Time: Dec 06, 2023 at 08:31 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -20,6 +20,28 @@ SET time_zone = "+00:00";
 --
 -- Database: `LazyFood`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Menu`
+--
+
+CREATE TABLE `Menu` (
+  `m_id` int(11) NOT NULL,
+  `m_name` varchar(255) NOT NULL,
+  `m_type` varchar(255) NOT NULL,
+  `m_price` int(11) NOT NULL,
+  `m_image` varchar(255) NOT NULL,
+  `m_promotion` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `Menu`
+--
+
+INSERT INTO `Menu` (`m_id`, `m_name`, `m_type`, `m_price`, `m_image`, `m_promotion`) VALUES
+(18, 'กระเพราหมูสับ', 'อาหาร', 50, '20231206202514_9641.png', 0);
 
 -- --------------------------------------------------------
 
@@ -53,6 +75,12 @@ INSERT INTO `User` (`u_id`, `u_fname`, `u_username`, `u_email`, `u_pass`, `u_ran
 --
 
 --
+-- Indexes for table `Menu`
+--
+ALTER TABLE `Menu`
+  ADD PRIMARY KEY (`m_id`);
+
+--
 -- Indexes for table `User`
 --
 ALTER TABLE `User`
@@ -63,10 +91,16 @@ ALTER TABLE `User`
 --
 
 --
+-- AUTO_INCREMENT for table `Menu`
+--
+ALTER TABLE `Menu`
+  MODIFY `m_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+--
 -- AUTO_INCREMENT for table `User`
 --
 ALTER TABLE `User`
-  MODIFY `u_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `u_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
