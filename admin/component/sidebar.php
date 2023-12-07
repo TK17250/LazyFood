@@ -18,8 +18,6 @@
         <!-- Sidebar Menu -->
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu">
-                <!-- Add icons to the links using the .nav-icon class
-             with font-awesome or any other icon font library -->
 
                 <!-- รายการผู้ใช้ -->
                 <li class="nav-item menu-open">
@@ -58,6 +56,41 @@
                                 <p>เพิ่มผู้ใช้</p>
                             </a>
                         </li>
+                    </ul>
+                    
+                </li>
+
+                <!-- รายการเมนู -->
+                <li class="nav-item menu-open">
+
+                    <!-- Dropdown -->
+                    <a class="nav-link" role="button">
+                        <i class="nav-icon bi bi-clipboard2-fill"></i>
+                        <p>
+                            เมนู
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+
+                    <!-- Menu -->
+                    <ul class="nav nav-treeview">
+
+                        <!-- List Food -->
+                        <li class="nav-item">
+                            <a href="./listmenu.php" class="nav-link">
+                                <i class="far bi-square nav-icon"></i>
+                                <p>รายการเมนู</p>
+                            </a>
+                        </li>
+
+                        <!-- Add Menu -->
+                        <li class="nav-item">
+                            <a href="./addmenu.php" class="nav-link">
+                                <i class="far bi-plus-square-fill nav-icon"></i>
+                                <p>เพิ่มเมนู</p>
+                            </a>
+                        </li>
+
                     </ul>
                     
                 </li>

@@ -58,6 +58,7 @@ o {
 
 .btn-color:hover {
     background-color: #c06305 !important;
+    color: white !important;
 }
 
 .btn-color:disabled {
