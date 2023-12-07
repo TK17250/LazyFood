@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Dec 06, 2023 at 08:31 PM
+-- Generation Time: Dec 07, 2023 at 04:15 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -41,7 +41,10 @@ CREATE TABLE `Menu` (
 --
 
 INSERT INTO `Menu` (`m_id`, `m_name`, `m_type`, `m_price`, `m_image`, `m_promotion`) VALUES
-(18, 'กระเพราหมูสับ', 'อาหาร', 50, '20231206202514_9641.png', 0);
+(18, 'กระเพราหมูสับ', 'อาหาร', 50, '20231206202514_9641.png', 0),
+(19, 'น้ำเปล่า', 'เครื่องดื่ม', 10, '20231207133936_5008.png', 0),
+(20, 'เค้่ก', 'ของหวาน', 199, '20231207134112_5637.png', 0),
+(21, 'ไอติม', 'ของหวาน', 50, '20231207134316_6695.jpg', 0);
 
 -- --------------------------------------------------------
 
@@ -94,7 +97,7 @@ ALTER TABLE `User`
 -- AUTO_INCREMENT for table `Menu`
 --
 ALTER TABLE `Menu`
-  MODIFY `m_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `m_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `User`
