@@ -67,14 +67,57 @@ require_once '../class/menu_db.php';
             <div class="container-fluid">
                 <div class="row">
 
+                    <!-- Image -->
+                    <div class="row col-12">
+                        <div class="col-8 col-md-6 col-lg-3 m-auto d-block">
+                            <img src="../uploads/<?php echo $rowmenu['m_image'] ?>" id="preview-image" class="img-fluid rounded-4" alt="">
+                        </div>
+                    </div>
+
                     <!-- Form -->
                     <div class="col-12">
                     
-                        <form action="../process/edituser_db.php" method="post">
+                        <form action="../process/editmenu_db.php" method="post" enctype="multipart/form-data">
+                            <input type="hidden" name="menuid" value="<?php echo $rowmenu['m_id'] ?>">
+                            <input type="hidden" name="oldname" value="<?php echo $rowmenu['m_name'] ?>">
+                            <input type="hidden" name="oldimage" value="<?php echo $rowmenu['m_image'] ?>">
+                            <input type="hidden" name="promotion" value="<?php echo $rowmenu['m_promotion'] ?>">
+
+                            <!-- Name -->
+                            <div class="mb-3">
+                                <label for="menuname" class="form-label">ชื่อเมนู</label>
+                                <input type="text" class="form-control" id="menuname" name="menuname" value="<?php echo $rowmenu['m_name'] ?>" autocomplete="off" required>
+                                <div class="invalid-feedback">
+                                    กรอกชื่อเมนู
+                                </div>
+                            </div>
+
+                            <!-- Price -->
+                            <div class="mb-3">
+                                <label for="price" class="form-label">ราคาเมนู ( บาท )</label>
+                                <input type="number" class="form-control" name="price" id="price" value="<?php echo $rowmenu['m_price'] ?>" autocomplete="off" required>
+                            </div>
+
+                            <!-- Type -->
+                            <div class="mb-3">
+                                <label for="menutype">เลือกประเภท</label>
+                                <select class="form-select" name="menutype" id="menutype" required>
+                                    <option value="<?php echo $rowmenu['m_type'] ?>" selected hidden><?php echo $rowmenu['m_type'] ?></option>
+                                    <option value="อาหาร">อาหาร</option>
+                                    <option value="เครื่องดื่ม">เครื่องดื่ม</option>
+                                    <option value="ของหวาน">ของหวาน</option>
+                                </select>
+                            </div>
+
+                            <!-- image -->
+                            <div class="mb-3">
+                                <label for="image" class="form-label">รูปภาพ</label>
+                                <input type="file" class="form-control" accept="image/jpeg, image/png, image/jpg" onchange="showPreview(event);" name="image" id="image" autocomplete="off">
+                            </div>
 
                             <!-- Submit -->
                             <div class="mb-2">
-                                <button type="submit" class="btn-color m-auto d-block" name="edituser">ยืนยันการแก้ไข</button>
+                                <button type="submit" class="btn-color m-auto d-block" name="editmenu">ยืนยันการแก้ไข</button>
                             </div>
 
                         </form>
@@ -91,6 +134,7 @@ require_once '../class/menu_db.php';
     <?php include_once './component/footer.php'; ?>
 
 </body>
+<script src="../dist/js/preview_imageAD.js"></script>
 <script src="../dist/js/alertAD.js"></script>
 <script src="../framework/sweetalert2.all.min.js"></script>
 <script src="../framework/js/jquery.min.js"></script>

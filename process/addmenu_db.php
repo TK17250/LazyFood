@@ -8,9 +8,9 @@ require_once '../class/menu_db.php';
     $dbmenu = new Menu_DB;
 
     if (isset($_POST['addmenu'])) {
-        $name = $_POST['menuname'];
-        $price = $_POST['price'];
-        $type = $_POST['menutype'];
+        $name = mysqli_real_escape_string($dbmenu->dbconn, $_POST['menuname']);
+        $price = mysqli_real_escape_string($dbmenu->dbconn, $_POST['price']);
+        $type = mysqli_real_escape_string($dbmenu->dbconn, $_POST['menutype']);
         $image = $_FILES['image']['name'];
         $promotion = "0";
 

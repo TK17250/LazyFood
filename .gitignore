@@ -1,1 +1,4 @@
 .DS_Store
+data/.DS_Store
+dist/.DS_Store
+framework/.DS_Store
