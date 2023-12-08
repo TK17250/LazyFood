@@ -52,7 +52,7 @@
                         <!-- Add User -->
                         <li class="nav-item">
                             <a href="./adduser.php" class="nav-link">
-                                <i class="far bi-plus-circle-fill nav-icon"></i>
+                                <i class="far bi-plus-circle-fill nav-icon text-warning"></i>
                                 <p>เพิ่มผู้ใช้</p>
                             </a>
                         </li>
@@ -83,10 +83,18 @@
                             </a>
                         </li>
 
+                        <!-- Promotion -->
+                        <li class="nav-item">
+                            <a href="./menupromotion.php" class="nav-link">
+                                <i class="fa-solid fa-heart nav-icon text-danger"></i>
+                                <p>โปรโมชั่น</p>
+                            </a>
+                        </li>
+
                         <!-- Add Menu -->
                         <li class="nav-item">
                             <a href="./addmenu.php" class="nav-link">
-                                <i class="far bi-plus-square-fill nav-icon"></i>
+                                <i class="far bi-plus-square-fill nav-icon text-warning"></i>
                                 <p>เพิ่มเมนู</p>
                             </a>
                         </li>

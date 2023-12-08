@@ -10,6 +10,13 @@
             return $nums;
         }
 
+        // Read Menu
+        public function readmenu() {
+            $sql = "SELECT * FROM Menu";
+            $result = mysqli_query($this->dbconn, $sql);
+            return $result;
+        }
+
         // Read Menu Type
         public function readmenutype($type, $page = 1, $recordsPerPage = 5) {
 
@@ -59,6 +66,13 @@
         // Delete Menu
         public function deletemenu($id) {
             $sql = "DELETE FROM Menu WHERE m_id = '$id'";
+            $result = mysqli_query($this->dbconn, $sql);
+            return $result;
+        }
+
+        // Update Promotion
+        public function updatepromotion($id, $promotion) {
+            $sql = "UPDATE Menu SET m_promotion = '$promotion' WHERE m_id = '$id'";
             $result = mysqli_query($this->dbconn, $sql);
             return $result;
         }

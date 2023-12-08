@@ -69,11 +69,11 @@ require_once '../class/menu_db.php';
                         'เพิ่มเมนูสำเร็จ',
                         'success'
                     ).then(function() {
-                        location.href = '../admin/adminpage.php';
+                        location.href = '../admin/listmenu.php';
                     })
                 });
             </script>";
-            header("refresh:2; ../admin/adminpage.php");
+            header("refresh:2; ../admin/listmenu.php");
         }
 
     }
