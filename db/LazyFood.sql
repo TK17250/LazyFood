@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Dec 07, 2023 at 04:15 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Generation Time: Dec 08, 2023 at 03:27 AM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -41,9 +41,8 @@ CREATE TABLE `Menu` (
 --
 
 INSERT INTO `Menu` (`m_id`, `m_name`, `m_type`, `m_price`, `m_image`, `m_promotion`) VALUES
-(18, 'กระเพราหมูสับ', 'อาหาร', 50, '20231206202514_9641.png', 0),
 (19, 'น้ำเปล่า', 'เครื่องดื่ม', 10, '20231207133936_5008.png', 0),
-(20, 'เค้่ก', 'ของหวาน', 199, '20231207134112_5637.png', 0),
+(20, 'เค้ก', 'ของหวาน', 199, '20231207134112_5637.png', 0),
 (21, 'ไอติม', 'ของหวาน', 50, '20231207134316_6695.jpg', 0);
 
 -- --------------------------------------------------------
