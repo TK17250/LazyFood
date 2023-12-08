@@ -121,7 +121,7 @@ require_once '../class/menu_db.php';
                                                     </a>
 
                                                     <!-- Delete -->
-                                                    <button type="submit" class="bi bi-trash-fill m-auto btn btn-danger p-2 rounded">
+                                                    <button type="submit" class="bi bi-trash-fill m-auto btn btn-danger p-2 rounded" name="delmenu" onclick="return confirmdeletemenu()" value="<?php echo $row['m_id'] ?>">
                                                         ลบ
                                                     </button>
                                                 </div>

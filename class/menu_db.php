@@ -48,5 +48,19 @@
             $result = mysqli_query($this->dbconn, $sql);
             return $result;
         }
+
+        // Edit Menu
+        public function editmenu($name, $price, $type, $image, $promotion, $id) {
+            $sql = "UPDATE Menu SET m_name = '$name', m_price = '$price', m_type = '$type', m_image = '$image', m_promotion = '$promotion' WHERE m_id = '$id'";
+            $result = mysqli_query($this->dbconn, $sql);
+            return $result;
+        }
+
+        // Delete Menu
+        public function deletemenu($id) {
+            $sql = "DELETE FROM Menu WHERE m_id = '$id'";
+            $result = mysqli_query($this->dbconn, $sql);
+            return $result;
+        }
         
     }
