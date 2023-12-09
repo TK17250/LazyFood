@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Dec 08, 2023 at 03:27 AM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.2.0
+-- Generation Time: Dec 09, 2023 at 08:00 PM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -43,7 +43,9 @@ CREATE TABLE `Menu` (
 INSERT INTO `Menu` (`m_id`, `m_name`, `m_type`, `m_price`, `m_image`, `m_promotion`) VALUES
 (19, 'น้ำเปล่า', 'เครื่องดื่ม', 10, '20231207133936_5008.png', 0),
 (20, 'เค้ก', 'ของหวาน', 199, '20231207134112_5637.png', 0),
-(21, 'ไอติม', 'ของหวาน', 50, '20231207134316_6695.jpg', 0);
+(21, 'ไอติม', 'ของหวาน', 50, '20231207134316_6695.jpg', 0),
+(42, 'ส้มตำ', 'อาหาร', 80, '20231208190452_3162.png', 1),
+(50, 'กระเพราหมูสับ', 'อาหาร', 35, '20231209164220_3172.png', 1);
 
 -- --------------------------------------------------------
 
@@ -66,7 +68,7 @@ CREATE TABLE `User` (
 
 INSERT INTO `User` (`u_id`, `u_fname`, `u_username`, `u_email`, `u_pass`, `u_rank`) VALUES
 (1, 'TK Kg', 'TK17250', 'TK@KG', '$2y$10$v6bP/WPvgIwh5dF3rrdFUeQ6VeZ01z.qJnYEn1LVaxN0yIbbEX8w.', 'ผู้จัดการ'),
-(2, 'ABCD EFGHI', 'admin', 'admin@admin', '$2y$10$v6bP/WPvgIwh5dF3rrdFUeQ6VeZ01z.qJnYEn1LVaxN0yIbbEX8w.', 'ผู้จัดการ'),
+(2, 'ABCD EFGHI', 'admin', 'admin@admin', '$2y$10$um4E2ZUjIeD8pJlrvFmqHul2VWRMeq.EBkXLlIGTLCvku2OSuNjTG', 'ผู้จัดการ'),
 (3, 'ณฐภัทร แสนใจพรม', 'PlayX', 'kaow322@gmail.com', '$2y$10$zyYxnuO0pe5HA9GO2wS15O7f/nOoh1eEpE5Ulr.OCOeTmCOuNAQia', 'สมาชิก'),
 (13, '123', '123', '123@123', '$2y$10$.gf70GTnX2A3kdjvNB22heK.yoIxZctVHcfM7u6h01zobZxaoxeNW', 'สมาชิก'),
 (14, 'dfsgdf', 'dfg', 'dfg@dfg', '$2y$10$7Xi2und6TufD/SLp6fuJ4uH0w0.S1ENMTsDZqRVRVeO0Ji1bBN0Ga', 'สมาชิก'),
@@ -96,7 +98,7 @@ ALTER TABLE `User`
 -- AUTO_INCREMENT for table `Menu`
 --
 ALTER TABLE `Menu`
-  MODIFY `m_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `m_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT for table `User`
