@@ -69,6 +69,13 @@
             return $result;
         }
 
+        // Read Username
+        public function readusername($username) {
+            $sql = "SELECT * FROM User WHERE u_username = '$username'";
+            $result = mysqli_query($this->dbconn, $sql);
+            return $result;
+        }
+
         // Edit User
         public function edituser($fname, $username, $email, $rank, $userid) {
             $sql = "UPDATE User SET 
@@ -85,6 +92,17 @@
             $sql = "DELETE FROM User WHERE u_id = '$userid'";
             $result = mysqli_query($this->dbconn, $sql);
             return $result;
+        }
+
+        // Setting User
+        private function settinguser($fname, $username, $email, $passowrd, $userid) {
+            $sql = "UPDATE User SET u_fname = '$fname', u_username = '$username', u_email = '$email', u_pass = '$passowrd' WHERE u_id = '$userid'";
+            $result = mysqli_query($this->dbconn, $sql);
+            return $result;
+        }
+
+        public function publicsettinguser($fname, $username, $email, $passowrd, $userid) {
+            return $this->settinguser($fname, $username, $email, $passowrd, $userid);
         }
 
     }
