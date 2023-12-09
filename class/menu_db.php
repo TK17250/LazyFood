@@ -84,4 +84,23 @@
             return $result;
         }
 
+        // -------------------------------------------------- Chart --------------------------------------------------
+
+        // Read Menu Type
+        public function readmenutypechart($type) {
+            $sql = "SELECT * FROM Menu WHERE m_type = '$type'";
+            $result = mysqli_query($this->dbconn, $sql);
+            $nums = mysqli_num_rows($result);
+            return $nums;
+        }
+
+        // Read Menu Type Average
+        public function readmenutypechartaverage($type) {
+            $sql = "SELECT AVG(m_price) as average FROM Menu WHERE m_type = '$type'";
+            $result = mysqli_query($this->dbconn, $sql);
+            $row = mysqli_fetch_assoc($result);
+            $average = $row['average'];
+            return $average;
+        }
+
     }
