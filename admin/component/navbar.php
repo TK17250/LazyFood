@@ -31,22 +31,15 @@
             <a href="adminpage.php" class="nav-link">Home</a>
         </li>
 
-        <!-- Drop Down -->
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="navbarDropdown2" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-bs-toggle="dropdown">
-                Help
-            </a>
-            <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">FAQ</a>
-                <a class="dropdown-item" href="#">Support</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Contact</a>
-            </div>
-        </li>
     </ul>
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
+
+        <!-- Setting -->
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="./settinguser.php" class="nav-link">ตั้งค่า <i class="fa-solid fa-gear ms-1"></i></a>
+        </li>
         
         <!-- Logout -->
         <li class="nav-item">

@@ -17,6 +17,13 @@
             return $result;
         }
 
+        // Read Menu Promotion ORDER 
+        public function readmenupromotion() {
+            $sql = "SELECT * FROM Menu ORDER BY m_promotion DESC";
+            $result = mysqli_query($this->dbconn, $sql);
+            return $result;
+        }
+
         // Read Menu Type
         public function readmenutype($type, $page = 1, $recordsPerPage = 5) {
 
@@ -76,5 +83,5 @@
             $result = mysqli_query($this->dbconn, $sql);
             return $result;
         }
-        
+
     }
