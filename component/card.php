@@ -12,8 +12,10 @@
             ราคา <?php echo $row['m_price'] ?> บาท
         </p>
         <form action="./process/buy_db.php" method="post">
+            <input type="hidden" name="menuid" value="<?php echo $row['m_id'] ?>">
+            <input type="hidden" name="menuname" value="<?php echo $row['m_name'] ?>">
             <label class="form-lable" for="menuquan<?php echo $row['m_id'] ?>">จำนวน</label>
-            <input type="number" class="form-control" name="menuquan" id="menuquan<?php echo $row['m_id'] ?>" autocomplete="off" required>
+            <input type="number" class="form-control" name="menuquan" min="1" id="menuquan<?php echo $row['m_id'] ?>" autocomplete="off" required>
             <div class="d-block d-md-flex mt-3">
                 <button type="submit" name="buy" class="btn btn-color m-auto">สั่งซื้อ</button>
                 <button type="submit" name="addtocart" class="btn btn-outline-color m-auto">เพิ่มลงในตะกร้า</button>

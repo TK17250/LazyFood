@@ -71,7 +71,7 @@ o {
     border-radius: 5px;
     border: none;
     color: white;
-    padding: 5px 10px 5px 10px;
+    padding: 7px;
     transition: all 0.2s;
     cursor: pointer;
 }
@@ -93,7 +93,7 @@ o {
     border: 1px solid #eb8219 !important;
     border-radius: 5px;
     color: #eb8219 !important;
-    padding: 5px 10px 5px 10px;
+    padding: 6px;
     transition: all 0.2s;
     cursor: pointer;
 }

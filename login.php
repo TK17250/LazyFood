@@ -63,7 +63,7 @@
 
                             <!-- Submit -->
                             <div class="">
-                                <button type="submit" class="btn-color m-auto d-block" name="log">สมัครสมาชิก</button>
+                                <button type="submit" class="btn-color m-auto d-block" name="log">เข้าสู่ระบบ</button>
                                 <div class="mt-2">
                                     <a href="./register.php" class="mt-2">ยังไม่มีบัญชี</a>
                                 </div>
