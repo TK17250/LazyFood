@@ -9,6 +9,10 @@ body, html {
     font-family: IBM;
 }
 
+a {
+    text-decoration: none;
+}
+
 o {
     color: red;
 }
@@ -21,7 +25,23 @@ o {
     color: #c06305;
 }
 
-/*                     icon                     */
+.marq {
+    background-color: #eb8219;
+    color: white;
+    padding: 5px;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    background-color: #21252a;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #eb8219;
+    border-radius: 10px;
+}
+
+/* -------------------------- icon -------------------------- */
 
 .icon {
     width: 30px;
@@ -33,7 +53,7 @@ o {
     transform: translateY(-5px);
 }
 
-/*                     Navbar                       */
+/* -------------------------- Navbar -------------------------- */
 
 .navbar-brand {
     transition: all 0.1s;
@@ -43,7 +63,7 @@ o {
     color: #eb8219;
 }
 
-/*                     Button                     */
+/* -------------------------- Button -------------------------- */
 
 /*    btn-color    */
 .btn-color {
@@ -67,4 +87,52 @@ o {
 
 .btn-color:hover:disabled {
     background-color: #eb8219 !important;
+}
+
+.btn-outline-color {
+    border: 1px solid #eb8219 !important;
+    border-radius: 5px;
+    color: #eb8219 !important;
+    padding: 5px 10px 5px 10px;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.btn-outline-color:hover {
+    background-color: #eb8219 !important;
+    color: white !important;
+}
+
+/* -------------------------- Menu -------------------------- */
+
+.card {
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
+}
+
+.card:hover {
+    /* box-shadow: 0 0 30px 0 #ccc; */
+    transform: translateY(-10px);
+}
+
+.promotion {
+    background-color: #21252a;
+}
+
+/* -------------------------- Footer -------------------------- */
+
+footer {
+    background-color: #141414;
+    padding: 20px;
+    color: white;
+    position: relative;
+}
+
+.github {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    color: white;
 }
