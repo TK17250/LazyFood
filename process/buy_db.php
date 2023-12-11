@@ -37,62 +37,46 @@ require_once '../class/client_db.php';
             </script>";
             header("refresh:2; ../index.php");
         } else {
-            // Check Cart
-            if ($rowcart['c_username'] == $username) {
-                $price = $rowmenu['m_price'] * $menuquan;
-                // Buy
-                echo "<script>
-                    $(document).ready(function() {
-                        Swal.fire({
-                            icon: 'question',
-                            title: 'กรุณากรอกจำนวนเงิน',
-                            text: 'ราคา " . $price . " บาท',
-                            input: 'number',
-                            inputAttributes: {
-                                autocapitalize: 'off',
-                                autocomplete: 'off',
-                            },
-                            showCancelButton: true,
-                            confirmButtonText: 'ยืนยัน',
-                            cancelButtonText: 'ยกเลิก',
-                            showLoaderOnConfirm: true,
-                            preConfirm: (money) => {
-                                if (money < $price) {
-                                    return Swal.fire({
-                                        icon: 'error',
-                                        title: 'กรุณากรอกจำนวนเงินให้ครบถ้วน',
-                                    }).then(() => {
-                                        history.back();
-                                    })
-                                } else {
-                                    return Swal.fire({
-                                        icon: 'success',
-                                        title: 'สั่งซื้อสินค้าสำเร็จ',
-                                        text: 'เงินทอน ' + (money - $price) + ' บาท',
-                                    }).then(() => {
-                                        window.location.href = '../index.php';
-                                    })
-                                }
-                            },
-                        }).then(() => {
-                            window.location.href = '../index.php';
-                        })
-                    });
-                </script>";
-            } else {
-                $_SESSION['error'] = "ไม่สามารถสั่งซื้อได้";
-                echo "<script>
-                    $(document).ready(function() {
-                        Swal.fire({
-                            icon: 'error',
-                            title: 'ไม่สามารถสั่งซื้อได้',
-                        }).then(() => {
-                            window.location.href = '../index.php';
-                        })
-                    });
-                </script>";
-                header("refresh:2; ../index.php");
-            }
+            $price = $rowmenu['m_price'] * $menuquan;
+            // Buy
+            echo "<script>
+                $(document).ready(function() {
+                    Swal.fire({
+                        icon: 'question',
+                        title: 'กรุณากรอกจำนวนเงิน',
+                        text: 'ราคา " . $price . " บาท',
+                        input: 'number',
+                        inputAttributes: {
+                            autocapitalize: 'off',
+                            autocomplete: 'off',
+                        },
+                        showCancelButton: true,
+                        confirmButtonText: 'ยืนยัน',
+                        cancelButtonText: 'ยกเลิก',
+                        showLoaderOnConfirm: true,
+                        preConfirm: (money) => {
+                            if (money < $price) {
+                                return Swal.fire({
+                                    icon: 'error',
+                                    title: 'กรุณากรอกจำนวนเงินให้ครบถ้วน',
+                                }).then(() => {
+                                    history.back();
+                                })
+                            } else {
+                                return Swal.fire({
+                                    icon: 'success',
+                                    title: 'สั่งซื้อสินค้าสำเร็จ',
+                                    text: 'เงินทอน ' + (money - $price) + ' บาท',
+                                }).then(() => {
+                                    window.location.href = '../index.php';
+                                })
+                            }
+                        },
+                    }).then(() => {
+                        window.location.href = '../index.php';
+                    })
+                });
+            </script>";
         }
     }
 

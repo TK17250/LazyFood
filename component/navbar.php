@@ -27,9 +27,9 @@
                         เมนู
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dark">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        <li><a class="dropdown-item" href="./menu.php?menutype=อาหาร">อาหาร</a></li>
+                        <li><a class="dropdown-item" href="./menu.php?menutype=เครื่องดื่ม">เครื่องดื่ม</a></li>
+                        <li><a class="dropdown-item" href="./menu.php?menutype=ของหวาน">ของหวาน</a></li>
                     </ul>
                 </li>
             </ul>
@@ -38,6 +38,16 @@
             <div class="d-flex navbar-nav">
 
                 <?php if (!empty($_SESSION['name'])) { ?>
+
+                    <!-- Cart -->
+                    <li class="nav-item">
+                        <a href="./cart.php" class="nav-link"><i class="fa-solid fa-shopping-cart ms-1"></i> ตะกร้าสินค้า</a>
+                    </li>
+
+                    <!-- Setting -->
+                    <li class="nav-item">
+                        <a href="./settingclient.php" class="nav-link"><i class="fa-solid fa-gear ms-1"></i> ตั้งค่าบัญชี</a>
+                    </li>
 
                     <!-- Username -->
                     <li class="nav-item">

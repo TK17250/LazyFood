@@ -48,28 +48,48 @@
             return $result;
         }
 
+        // Read Cart ID
+        public function readcartid($id) {
+            $sql = "SELECT * FROM Cart WHERE c_id = '$id'";
+            $result = mysqli_query($this->dbconn, $sql);
+            return $result;
+        }
+
         // Add to Cart
         private function addtocartprivate($menuid, $menuname, $menuquan) {
             $username = $_SESSION['name'];
             
             $readcart = "SELECT * FROM Cart WHERE c_username = '$username'";
             $resultcart = mysqli_query($this->dbconn, $readcart);
-            $rowcart = mysqli_fetch_array($resultcart);
-
-            if ($rowcart['c_menuid'] == $menuid) {
-                $newmenuquan = $rowcart['c_menuquan'] + $menuquan;
-                $sql = "UPDATE Cart SET c_menuquan = '$newmenuquan' WHERE c_username = '$username' AND c_menuid = '$menuid'";
-                $result = mysqli_query($this->dbconn, $sql);
-                return $result;
-            } else {
-                $sql = "INSERT INTO Cart (c_username, c_menuid, c_menuname, c_menuquan) VALUES ('$username', '$menuid', '$menuname', '$menuquan')";
-                $result = mysqli_query($this->dbconn, $sql);
-                return $result;
+            
+            while ($rowcart = mysqli_fetch_assoc($resultcart)) {
+                if ($rowcart['c_menuname'] == $menuname) {
+                    $newmenuquan = $rowcart['c_menuquan'] + $menuquan;
+                    $sql = "UPDATE Cart SET c_menuquan = '$newmenuquan' WHERE c_username = '$username' AND c_menuid = '$menuid'";
+                    $result = mysqli_query($this->dbconn, $sql);
+                    return $result;
+                    break;
+                }
             }
+            
+            $sql = "INSERT INTO Cart (c_username, c_menuid, c_menuname, c_menuquan) VALUES ('$username', '$menuid', '$menuname', '$menuquan')";
+            $result = mysqli_query($this->dbconn, $sql);
+            return $result;
         }
 
         public function addtocart($menuid, $menuname, $menuquan) {
             return $this->addtocartprivate($menuid, $menuname, $menuquan);
+        }
+
+        // Delete Cart
+        private function deletecartprivate($id) {
+            $sql = "DELETE FROM Cart WHERE c_id = '$id'";
+            $result = mysqli_query($this->dbconn, $sql);
+            return $result;
+        }
+
+        public function deletecart($id) {
+            return $this->deletecartprivate($id);
         }
 
     }
