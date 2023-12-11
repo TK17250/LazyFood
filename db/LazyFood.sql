@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Dec 09, 2023 at 08:00 PM
+-- Generation Time: Dec 11, 2023 at 10:07 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -20,6 +20,20 @@ SET time_zone = "+00:00";
 --
 -- Database: `LazyFood`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Cart`
+--
+
+CREATE TABLE `Cart` (
+  `c_id` int(11) NOT NULL,
+  `c_username` varchar(255) NOT NULL,
+  `c_menuid` int(11) NOT NULL,
+  `c_menuname` varchar(255) NOT NULL,
+  `c_menuquan` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -41,11 +55,11 @@ CREATE TABLE `Menu` (
 --
 
 INSERT INTO `Menu` (`m_id`, `m_name`, `m_type`, `m_price`, `m_image`, `m_promotion`) VALUES
-(19, 'น้ำเปล่า', 'เครื่องดื่ม', 10, '20231207133936_5008.png', 0),
-(20, 'เค้ก', 'ของหวาน', 199, '20231207134112_5637.png', 0),
+(19, 'น้ำเปล่า', 'เครื่องดื่ม', 10, '20231207133936_5008.png', 1),
+(20, 'เค้ก', 'ของหวาน', 199, '20231207134112_5637.png', 1),
 (21, 'ไอติม', 'ของหวาน', 50, '20231207134316_6695.jpg', 0),
 (42, 'ส้มตำ', 'อาหาร', 80, '20231208190452_3162.png', 1),
-(50, 'กระเพราหมูสับ', 'อาหาร', 35, '20231209164220_3172.png', 1);
+(50, 'กระเพราหมูสับ', 'อาหาร', 35, '20231209164220_3172.png', 0);
 
 -- --------------------------------------------------------
 
@@ -72,11 +86,18 @@ INSERT INTO `User` (`u_id`, `u_fname`, `u_username`, `u_email`, `u_pass`, `u_ran
 (3, 'ณฐภัทร แสนใจพรม', 'PlayX', 'kaow322@gmail.com', '$2y$10$zyYxnuO0pe5HA9GO2wS15O7f/nOoh1eEpE5Ulr.OCOeTmCOuNAQia', 'สมาชิก'),
 (13, '123', '123', '123@123', '$2y$10$.gf70GTnX2A3kdjvNB22heK.yoIxZctVHcfM7u6h01zobZxaoxeNW', 'สมาชิก'),
 (14, 'dfsgdf', 'dfg', 'dfg@dfg', '$2y$10$7Xi2und6TufD/SLp6fuJ4uH0w0.S1ENMTsDZqRVRVeO0Ji1bBN0Ga', 'สมาชิก'),
-(21, 'asd', 'asd', 'asd@asd', '$2y$10$opu0I49TMh9GVS.DlQ3D0.AJ5z4.3yNExUq7tW0qkTaF0hiEd6lvS', 'สมาชิก');
+(21, 'asd', 'asd', 'asd@asd', '$2y$10$opu0I49TMh9GVS.DlQ3D0.AJ5z4.3yNExUq7tW0qkTaF0hiEd6lvS', 'สมาชิก'),
+(35, 'Client', 'Client', 'Client@Client', '$2y$10$PO5WOQHJDBrrPrQ69YYZIOyPK6l28/UNaRgxolJxqRlQcgEV9MXVy', 'สมาชิก');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `Cart`
+--
+ALTER TABLE `Cart`
+  ADD PRIMARY KEY (`c_id`);
 
 --
 -- Indexes for table `Menu`
@@ -95,16 +116,22 @@ ALTER TABLE `User`
 --
 
 --
+-- AUTO_INCREMENT for table `Cart`
+--
+ALTER TABLE `Cart`
+  MODIFY `c_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+
+--
 -- AUTO_INCREMENT for table `Menu`
 --
 ALTER TABLE `Menu`
-  MODIFY `m_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `m_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- AUTO_INCREMENT for table `User`
 --
 ALTER TABLE `User`
-  MODIFY `u_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `u_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
