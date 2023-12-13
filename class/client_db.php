@@ -92,4 +92,40 @@
             return $this->deletecartprivate($id);
         }
 
+        // --------------------------------------------------------------------------------------------------------------------------------------------
+
+        // Check Username
+        public function checkusername($username) {
+            $sql = "SELECT * FROM User WHERE u_username = '$username'";
+            $result = mysqli_query($this->dbconn, $sql);
+            $nums = mysqli_num_rows($result);
+            return $nums;
+        }
+
+        // Check Email
+        public function checkemail($email) {
+            $sql = "SELECT * FROM User WHERE u_email = '$email'";
+            $result = mysqli_query($this->dbconn, $sql);
+            $nums = mysqli_num_rows($result);
+            return $nums;
+        }
+
+        // Read Username
+        public function readusername($username) {
+            $sql = "SELECT * FROM User WHERE u_username = '$username'";
+            $result = mysqli_query($this->dbconn, $sql);
+            return $result;
+        }
+
+        // Setting User
+        private function settinguserprivate($userid, $fname, $username, $email, $password) {
+            $sql = "UPDATE User SET u_fname = '$fname', u_username = '$username', u_email = '$email', u_pass = '$password' WHERE u_id = '$userid'";
+            $result = mysqli_query($this->dbconn, $sql);
+            return $result;
+        }
+
+        public function settinguser($userid, $fname, $username, $email, $password) {
+            return $this->settinguserprivate($userid, $fname, $username, $email, $password);
+        }
+
     }
