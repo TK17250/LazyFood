@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Dec 11, 2023 at 10:07 AM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Generation Time: Dec 13, 2023 at 05:32 PM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -58,7 +58,7 @@ INSERT INTO `Menu` (`m_id`, `m_name`, `m_type`, `m_price`, `m_image`, `m_promoti
 (19, 'น้ำเปล่า', 'เครื่องดื่ม', 10, '20231207133936_5008.png', 1),
 (20, 'เค้ก', 'ของหวาน', 199, '20231207134112_5637.png', 1),
 (21, 'ไอติม', 'ของหวาน', 50, '20231207134316_6695.jpg', 0),
-(42, 'ส้มตำ', 'อาหาร', 80, '20231208190452_3162.png', 1),
+(42, 'ส้มตำ', 'อาหาร', 45, '20231208190452_3162.png', 1),
 (50, 'กระเพราหมูสับ', 'อาหาร', 35, '20231209164220_3172.png', 0);
 
 -- --------------------------------------------------------
@@ -87,7 +87,7 @@ INSERT INTO `User` (`u_id`, `u_fname`, `u_username`, `u_email`, `u_pass`, `u_ran
 (13, '123', '123', '123@123', '$2y$10$.gf70GTnX2A3kdjvNB22heK.yoIxZctVHcfM7u6h01zobZxaoxeNW', 'สมาชิก'),
 (14, 'dfsgdf', 'dfg', 'dfg@dfg', '$2y$10$7Xi2und6TufD/SLp6fuJ4uH0w0.S1ENMTsDZqRVRVeO0Ji1bBN0Ga', 'สมาชิก'),
 (21, 'asd', 'asd', 'asd@asd', '$2y$10$opu0I49TMh9GVS.DlQ3D0.AJ5z4.3yNExUq7tW0qkTaF0hiEd6lvS', 'สมาชิก'),
-(35, 'Client', 'Client', 'Client@Client', '$2y$10$PO5WOQHJDBrrPrQ69YYZIOyPK6l28/UNaRgxolJxqRlQcgEV9MXVy', 'สมาชิก');
+(35, 'Client', 'Client', 'Client@Client', '$2y$10$Yhb9QhaSwMFmYF4EuGX86OZjmPEBj1zeloFkkq6qeDfQFrUiqB5ca', 'สมาชิก');
 
 --
 -- Indexes for dumped tables
@@ -119,7 +119,7 @@ ALTER TABLE `User`
 -- AUTO_INCREMENT for table `Cart`
 --
 ALTER TABLE `Cart`
-  MODIFY `c_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `c_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `Menu`
