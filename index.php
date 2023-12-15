@@ -18,6 +18,13 @@ require_once './class/client_db.php';
     <link rel="stylesheet" href="./framework/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <link rel="stylesheet" href="./dist/css/main.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+    </style>
 </head>
 
 <body>
@@ -91,7 +98,7 @@ require_once './class/client_db.php';
                 <h1 class="text-light text-center"><i class="fa-solid fa-gift"></i> โปรโมชั่น <i class="fa-solid fa-gift"></i></h1>
 
                 <!-- Menu -->
-                <div class="row">
+                <div class="row gap-3">
                     <?php while ($row = mysqli_fetch_assoc($readmenupromotion)) { ?>
                         <?php include './component/card.php' ?>
                     <?php } ?>
@@ -102,7 +109,9 @@ require_once './class/client_db.php';
     <?php } ?>
 
     <!-- Footer -->
-    <?php include_once './component/footer.php' ?>
+    <div class="w-100 mt-auto">
+        <?php include_once './component/footer.php' ?>
+    </div>
 
 </body>
 <script src="./framework/js/bootstrap.bundle.min.js"></script>
