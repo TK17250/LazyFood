@@ -13,3 +13,8 @@
 - SweetAlert2
 - DataTables
 - Chart.js
+
+### Installation
+```
+git clone https://github.com/TK17250/LazyFood.git
+```
